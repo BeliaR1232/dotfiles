@@ -1,0 +1,9 @@
+[general]
+import = ["~/.config/alacritty/themes/nordic.toml"]
+
+[window]
+startup_mode = "Maximized"
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+size = 15

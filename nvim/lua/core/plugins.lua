@@ -18,23 +18,19 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	-- Themes
-	{ "AlexvZyl/nordic.nvim" },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
 	},
+	{ "EdenEast/nightfox.nvim" },
 	-- Plugins
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "WhoIsSethDaniel/mason-tool-installer" },
 	{ "nvim-treesitter/nvim-treesitter" },
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
 	{
 		"stevearc/conform.nvim",
 		opts = {},
@@ -73,5 +69,9 @@ require("lazy").setup({
 			date_format = "%d-%m-%Y %H:%M:%S", -- template for the date, check Date format section for more options
 			virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
 		},
+	},
+	{
+		"ibhagwan/fzf-lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 })

@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set({ "n", "v" }, ",<leader>", "<cmd>:nohlsearch<CR>")
 
 -- Quit
 vim.keymap.set("n", "<C-q>", "<cmd>:q<CR>", { desc = "Выйти" })
@@ -16,22 +17,11 @@ vim.keymap.set(
 	":Neotree toggle<CR>",
 	{ desc = "Открыть проводник", noremap = true, silent = true }
 )
-
--- Telescope
-vim.keymap.set(
-	"n",
-	"<leader>ff",
-	":Telescope find_files<CR>",
-	{ desc = "Найти файл", noremap = true, silent = true }
-)
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "live grep", noremap = true, silent = true })
-vim.keymap.set(
-	"n",
-	"<leader>fb",
-	":Telescope buffers<CR>",
-	{ desc = "Поиск буферов", noremap = true, silent = true }
-)
-
+-- Fzf
+vim.keymap.set("n", "<leader>ff", require("fzf-lua").files, { desc = "Fzf Files" })
+vim.keymap.set("n", "<leader>fg", require("fzf-lua").grep, { desc = "Fzf Grep" })
+vim.keymap.set("n", "<leader>fw", require("fzf-lua").grep_cword, { desc = "Fzf Word" })
+vim.keymap.set("n", "<leader>fr", require("fzf-lua").lsp_references, { desc = "Fzf References" })
 -- BufferLine
 vim.keymap.set(
 	"n",

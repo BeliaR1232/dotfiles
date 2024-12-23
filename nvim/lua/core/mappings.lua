@@ -47,3 +47,6 @@ vim.keymap.set(
 	"<cmd>:bdelete<CR>",
 	{ desc = "Закрыть текущий буфер", noremap = true, silent = true }
 )
+
+-- CSV view
+vim.keymap.set("n", "<leader>vc", ":CsvViewToggle<CR>", { desc = "Csv view" })

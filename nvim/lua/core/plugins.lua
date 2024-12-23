@@ -74,4 +74,8 @@ require("lazy").setup({
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	{
+		"hat0uma/csvview.nvim",
+	},
+	{ "0x00-ketsu/autosave.nvim" },
 })

@@ -50,3 +50,5 @@ vim.keymap.set(
 
 -- CSV view
 vim.keymap.set("n", "<leader>vc", ":CsvViewToggle<CR>", { desc = "Csv view" })
+-- Git
+vim.keymap.set("n", "<leader>gn", ":GitBlameToggle<CR>", { desc = "GitBlane toggle" })

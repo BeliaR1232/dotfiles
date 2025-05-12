@@ -1,7 +1,16 @@
 require("lspconfig").pyright.setup({
-	filetypes = { "python" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+				diagnosticMode = "workspace",
+			},
+		},
+	},
 })
-
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)

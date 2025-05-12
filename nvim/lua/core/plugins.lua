@@ -25,6 +25,16 @@ require("lazy").setup({
 		opts = {},
 	},
 	{ "EdenEast/nightfox.nvim" },
+	{ "craftzdog/solarized-osaka.nvim", lazy = false, priority = 1000, opts = {} },
+	{ "rebelot/kanagawa.nvim" },
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nordic").load()
+		end,
+	},
 	-- Plugins
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason.nvim" },
@@ -78,4 +88,5 @@ require("lazy").setup({
 		"hat0uma/csvview.nvim",
 	},
 	{ "0x00-ketsu/autosave.nvim" },
+	{ "HiPhish/rainbow-delimiters.nvim" },
 })

@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/themes/nightfox.toml"]
+import = ["~/.config/alacritty/themes/osaka.toml"]
 live_config_reload = true
 
 [window]
@@ -8,7 +8,7 @@ startup_mode = "Maximized"
 
 [font]
 normal = { family = "FiraCode Nerd Font Propo", style = "Retina" }
-size = 15
+size = 17
 
 [env]
 TERM = "xterm-256color" 

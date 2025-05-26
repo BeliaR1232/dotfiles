@@ -1,0 +1,5 @@
+alias va="source ./.venv/bin/activate.fish"
+alias nv="nvim ."
+alias major="bluetoothctl connect 1C:6E:4C:84:2A:95"
+alias buds="bluetoothctl connect 28:6F:40:3E:E5:02"
+alias tl="tree -L 2 -C"

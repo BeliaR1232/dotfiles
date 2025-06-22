@@ -1,14 +1,25 @@
 [general]
-import = ["~/.config/alacritty/themes/osaka.toml"]
+import = ["~/.config/alacritty/themes/nightfox.toml"]
 live_config_reload = true
+
+[terminal.shell]
+program = "/bin/zsh"
 
 [window]
 startup_mode = "Maximized"
-# opacity = 0.9
+opacity = 0.9
 
 [font]
 normal = { family = "FiraCode Nerd Font Propo", style = "Retina" }
-size = 17
+size = 18
+
+[window.dimensions]
+columns = 160
+lines = 80
+
+[window.padding]
+x = 10
+y = 10
 
 [env]
 TERM = "xterm-256color" 

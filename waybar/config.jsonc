@@ -49,13 +49,9 @@
   },
   "custom/logo": {
     "format": "",
-    "on-click": "fish ~/.config/rofi/powermenu.sh",
+    "on-click": "source ~/.config/rofi/powermenu.sh",
     "tooltip": true,
     "tooltip-format": "Powermenu"
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": ["cpu", "memory"]
   },
   "group/zvuk": {
     "orientation": "horizontal",
@@ -63,29 +59,28 @@
   },
   "clock#full": {
     "format": "{:L%A, %d %b %Y %H:%M}",
-    "tooltip": false,
-    "interval": 1
-  },
-  "clock#simpleclock": {
-    "format": " {:%H:%M}",
-    "tooltip": false
-  },
-  "clock": {
-    "format": "{:L%a %d %b %Y}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%d-%m-%Y}"
-  },
-  "cpu": {
-    "format": "<span color=\"#DCA561\"></span> {usage}%",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "<span color=\"#DCA561\"></span> {percentage}%"
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""]
+    "interval": 1,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                        "months":     "<span color='#ffead3'><b>{}</b></span>",
+                        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                        }
+            },
+    "actions":  {
+                "on-click-right": "mode",
+                "on-scroll-up": "tz_up",
+                "on-scroll-down": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+                }
   },
   "bluetooth": {
 	"format": "<span color=\"#DCA561\"></span> {status}",
@@ -95,7 +90,8 @@
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	"on-click": "bash ~/.config/rofi/rofi-bluethooth.sh"
 },
   "battery": {
     "states": {
@@ -110,10 +106,11 @@
     "format-icons": ["<span color=\"#DCA561\"></span>", "<span color=\"#DCA561\"></span>", "<span color=\"#DCA561\"></span>", "<span color=\"#DCA561\"></span>", "<span color=\"#DCA561\"></span>"]
   },
   "network": {
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": "  {essid} {signalStrength}%",
     "format-ethernet": "<span color=\"#DCA561\"></span> {bandwidthDownBytes}",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {essid}"
+    // "format-alt": "{ifname}: {essid}",
+	"on-click": "bash ~/.config/rofi/romena/ronema"
   },
   "pulseaudio#output": {
     "format": "<span color=\"#DCA561\">{icon}</span> {volume}%",

@@ -1,6 +1,6 @@
-#!/bin/fish
+#/bin/bash
 
-set wallpaper_dir "$HOME/Pictures/Wallpapers"
+wallpaper_dir="$HOME/Pictures/Wallpapers"
 
 find $wallpaper_dir -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" -o -iname "*.gif" \) -print0 | \
 while IFS= read -r -d $'\0' file;

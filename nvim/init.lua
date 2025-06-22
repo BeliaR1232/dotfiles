@@ -18,3 +18,5 @@ require("plugins.git-blame")
 require("plugins.fzf")
 require("plugins.csv")
 require("plugins.autosave")
+
+vim.opt.guifont = "FiraCodeNerdFont-Bold:h14"
